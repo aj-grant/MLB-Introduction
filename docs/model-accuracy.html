@@ -267,7 +267,7 @@ for publication. This library is called <code>tableone</code>.</p>
 <span id="cb22-2"><a href="model-accuracy.html#cb22-2" tabindex="-1"></a>                 <span class="at">repos =</span> <span class="st">&quot;https://cran.rstudio.com/&quot;</span> ) <span class="co">#downloads the package</span></span></code></pre></div>
 <pre><code>## 
 ## The downloaded binary packages are in
-##  /var/folders/wh/v60jpym15hg6l93y2pbbhg2m0000gq/T//RtmpJHxemb/downloaded_packages</code></pre>
+##  /var/folders/wh/v60jpym15hg6l93y2pbbhg2m0000gq/T//RtmpcwGDAr/downloaded_packages</code></pre>
 <div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="model-accuracy.html#cb24-1" tabindex="-1"></a><span class="fu">library</span>(tableone)            <span class="co">#loads the package</span></span></code></pre></div>
 <p>Read the <a href="https://www.dropbox.com/s/7wjsfdaf0wt2kg2/bmd.csv?dl=1">bmd.csv</a>
 dataset in R and use the function <code>CreateTableOne()</code> from the package <code>tableone</code>
@@ -312,33 +312,33 @@ developed by Wilkinson in 1999.</p>
 <span id="cb29-2"><a href="model-accuracy.html#cb29-2" tabindex="-1"></a>                 <span class="at">repos =</span> <span class="st">&quot;https://cran.rstudio.com/&quot;</span> )</span></code></pre></div>
 <pre><code>## 
 ## The downloaded binary packages are in
-##  /var/folders/wh/v60jpym15hg6l93y2pbbhg2m0000gq/T//RtmpJHxemb/downloaded_packages</code></pre>
+##  /var/folders/wh/v60jpym15hg6l93y2pbbhg2m0000gq/T//RtmpcwGDAr/downloaded_packages</code></pre>
 <div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="model-accuracy.html#cb31-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code></pre></div>
 <p>We start by defining the data and aesthetics</p>
 <div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="model-accuracy.html#cb32-1" tabindex="-1"></a><span class="fu">ggplot</span>(bmd.data, <span class="fu">aes</span>(<span class="at">x=</span>age, <span class="at">y=</span>bmd)) </span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-12-1.png" alt="" width="672" /></p>
+<p><img src="MLB-Introduction_files/figure-html/unnamed-chunk-12-1.png" alt="" width="672" /></p>
 <p>now, we add the geometry (in this case, dots)</p>
 <div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="model-accuracy.html#cb33-1" tabindex="-1"></a><span class="fu">ggplot</span>(bmd.data, <span class="fu">aes</span>(<span class="at">x=</span>age, <span class="at">y=</span>bmd)) <span class="sc">+</span> </span>
 <span id="cb33-2"><a href="model-accuracy.html#cb33-2" tabindex="-1"></a>        <span class="fu">geom_point</span>()</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-13-1.png" alt="" width="672" /></p>
+<p><img src="MLB-Introduction_files/figure-html/unnamed-chunk-13-1.png" alt="" width="672" /></p>
 <p>let’s add a smooth line (statistics)</p>
 <div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="model-accuracy.html#cb34-1" tabindex="-1"></a><span class="fu">ggplot</span>(bmd.data, <span class="fu">aes</span>(<span class="at">x=</span>age, <span class="at">y=</span>bmd)) <span class="sc">+</span> </span>
 <span id="cb34-2"><a href="model-accuracy.html#cb34-2" tabindex="-1"></a>        <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
 <span id="cb34-3"><a href="model-accuracy.html#cb34-3" tabindex="-1"></a>        <span class="fu">stat_smooth</span>()  </span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-14-1.png" alt="" width="672" /></p>
+<p><img src="MLB-Introduction_files/figure-html/unnamed-chunk-14-1.png" alt="" width="672" /></p>
 <p>and split by sex (facets)</p>
 <div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="model-accuracy.html#cb35-1" tabindex="-1"></a><span class="fu">ggplot</span>(bmd.data, <span class="fu">aes</span>(<span class="at">x=</span>age, <span class="at">y=</span>bmd)) <span class="sc">+</span> </span>
 <span id="cb35-2"><a href="model-accuracy.html#cb35-2" tabindex="-1"></a>        <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
 <span id="cb35-3"><a href="model-accuracy.html#cb35-3" tabindex="-1"></a>        <span class="fu">stat_smooth</span>() <span class="sc">+</span> </span>
 <span id="cb35-4"><a href="model-accuracy.html#cb35-4" tabindex="-1"></a>        <span class="fu">facet_grid</span>(sex<span class="sc">~</span>.)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-15-1.png" alt="" width="672" /></p>
+<p><img src="MLB-Introduction_files/figure-html/unnamed-chunk-15-1.png" alt="" width="672" /></p>
 <p>Finally, change the theme</p>
 <div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="model-accuracy.html#cb36-1" tabindex="-1"></a><span class="fu">ggplot</span>(bmd.data, <span class="fu">aes</span>(<span class="at">x=</span>age, <span class="at">y=</span>bmd)) <span class="sc">+</span> </span>
 <span id="cb36-2"><a href="model-accuracy.html#cb36-2" tabindex="-1"></a>        <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
 <span id="cb36-3"><a href="model-accuracy.html#cb36-3" tabindex="-1"></a>        <span class="fu">stat_smooth</span>() <span class="sc">+</span> </span>
 <span id="cb36-4"><a href="model-accuracy.html#cb36-4" tabindex="-1"></a>        <span class="fu">facet_grid</span>(sex<span class="sc">~</span>.) <span class="sc">+</span> </span>
 <span id="cb36-5"><a href="model-accuracy.html#cb36-5" tabindex="-1"></a>        <span class="fu">theme_bw</span>()</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-16-1.png" alt="" width="672" /></p>
+<p><img src="MLB-Introduction_files/figure-html/unnamed-chunk-16-1.png" alt="" width="672" /></p>
 </div>
 <div id="task-3---writing-a-function" class="section level3 hasAnchor" number="2.3.3">
 <h3><span class="header-section-number">2.3.3</span> Task 3 - Writing a function<a href="model-accuracy.html#task-3---writing-a-function" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -401,7 +401,7 @@ gitbook.start({
     "link": null,
     "text": null
   },
-  "download": ["_main.pdf"],
+  "download": ["MLB-Introduction.pdf"],
   "search": {
     "engine": "fuse",
     "options": null
